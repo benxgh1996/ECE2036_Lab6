@@ -106,7 +106,7 @@ int main() {
     //NOTE: In your program make sure the AIBot is prevented from
     //going outside the bounds set by this boarder!!
     uLCD.cls(); //This clears the screen
-    uLCD.rectangle(WALL_TLX, WALL_TLY, WALL_BRX, WALL_BRY, GREEN);
+    // uLCD.rectangle(WALL_TLX, WALL_TLY, WALL_BRX, WALL_BRY, GREEN);
 
     vector<ScreenObject *> screenObjectPtrs;
     screenObjectPtrs.push_back(new AIBot());
@@ -125,18 +125,19 @@ int main() {
     uLCD.text_width(1); //You can change the size of your text if you want
     uLCD.text_height(1); //using these member functions for uLCD
     uLCD.locate(1,14); //units are not pixels but character sizes
-    uLCD.printf("%i",points);
+    uLCD.printf("%s: %d           ", "Score:", points);
     //This will print out the points at bottom of screen
 
     screenObjectPtrs[0]->draw();
     bool gameover = false;
     while(!GETOUT) {
         if (!pb1) {
-            while (!pb2) {
+            while (pb2) {
                 wait(0.1);
             }
         }
 
+        uLCD.rectangle(WALL_TLX, WALL_TLY, WALL_BRX, WALL_BRY, GREEN);
         // Move screen objects.
         for (int i = 0; i < screenObjectPtrs.size(); i++) {
             if (i == 0) {
@@ -151,7 +152,15 @@ int main() {
         // Check overlap.
         for (int i = 1; i < screenObjectPtrs.size(); i++) {
             if (screenObjectPtrs[0]->overlap(screenObjectPtrs[i])) {
-                mySpeaker.PlayNote(450.0, 0.1, 0.2);
+                mySpeaker.PlayNote(1318.51, 0.05, 0.01); // E6
+                wait(0.05);
+                mySpeaker.PlayNote(987.77, 0.05, 0.01); // B5
+                wait(0.05);
+                mySpeaker.PlayNote(1318.51, 0.05, 0.01); // E6
+                wait(0.05);
+                mySpeaker.PlayNote(987.77, 0.05, 0.01); // B5
+                wait(0.05);
+
                 screenObjectPtrs[i]->erase();
 
                 screenObjectPtrs[i]->setXPos(ScreenObject::randXPos());
@@ -167,22 +176,26 @@ int main() {
                 uLCD.locate(1, 14);
                 uLCD.text_width(1);
                 uLCD.text_height(1);
-                uLCD.printf("%i", points);
+                uLCD.printf("%s %d           ", "Score:", points);
+
+                uLCD.locate(1, 15);
+                uLCD.printf("%s %d          ", "Change:",
+                            screenObjectPtrs[i]->getPoints());
 
                 if (points >= 50) {
                     uLCD.cls();
-                    uLCD.printf("\n\n\n\n\n        You Won!\n   "
-                                "                AI Robot\n"
-                                "        FULLY CHARGED!!");
-                    wait(3);
+                    uLCD.printf("\n\n\n\n\n     You Won!\n\n"
+                                "     AI Robot\n\n"
+                                "   FULLY CHARGED!!");
+                    wait(8);
                     gameover = true;
                     break;
                 } else if (points < 0) {
                     uLCD.cls();
-                    uLCD.printf("\n\n\n\n\n        You Lost!\n   "
-                                "                AI Robot\n"
-                                "        OUT OF POWER!!");
-                    wait(3);
+                    uLCD.printf("\n\n\n\n\n     You Lost!\n\n"
+                                "     AI Robot\n\n"
+                                "   OUT OF POWER!!");
+                    wait(8);
                     gameover = true;
                     break;
                 }
@@ -197,11 +210,9 @@ int main() {
     }
 
     // Print a final farewell to indicate win or loss.
-    // Also have a nice closing jingle for
-    // your game!
     uLCD.cls();
-    uLCD.printf("\n\n\n\n\n        AI Robot\n"
-                "            Will\n"
-                "        Come back!!");
+    uLCD.printf("\n\n\n\n\n      AI Robot\n\n"
+                "        Will\n\n"
+                "     Come Back!!");
     Jingle.playExit();
 }

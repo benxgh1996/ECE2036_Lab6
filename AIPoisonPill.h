@@ -1,16 +1,16 @@
 //
-// Created by Gonghan Xu on 4/25/23.
+// Created by Gonghan Xu
 //
 
-#ifndef LAB6_AIPOISONPILL_H
-#define LAB6_AIPOISONPILL_H
+#ifndef AIPOISONPILL_H
+#define AIPOISONPILL_H
 
 #include "ScreenObject.h"
 
 class AIPoisonPill: public ScreenObject {
 public:
-    AIPoisonPill(): ScreenObject(), vx(10), vy(10) {}
-    AIPoisonPill(int x, int y): ScreenObject(x, y), vx(10), vy(10) {}
+    AIPoisonPill(): ScreenObject(), vx(2), vy(2) {}
+    AIPoisonPill(int x, int y): ScreenObject(x, y), vx(2), vy(2) {}
 
     virtual void draw();
     virtual void move();
@@ -32,4 +32,4 @@ private:
 };
 
 
-#endif //LAB6_AIPOISONPILL_H
+#endif //AIPOISONPILL_H

@@ -2,7 +2,7 @@
 #define STARTUPJINGLE_H
 
 class GameJingle {
-    public:
+public:
     void playIntro();
     void playExit();
 };

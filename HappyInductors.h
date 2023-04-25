@@ -1,9 +1,9 @@
 //
-// Created by Gonghan Xu on 4/25/23.
+// Created by Gonghan Xu
 //
 
-#ifndef LAB6_HAPPYINDUCTORS_H
-#define LAB6_HAPPYINDUCTORS_H
+#ifndef HAPPYINDUCTORS_H
+#define HAPPYINDUCTORS_H
 
 #include "ScreenObject.h"
 
@@ -31,4 +31,4 @@ private:
 };
 
 
-#endif //LAB6_HAPPYINDUCTORS_H
+#endif //HAPPYINDUCTORS_H
