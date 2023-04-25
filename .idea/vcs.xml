@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/4DGL-uLCD-SE" vcs="hg4idea" />
+    <mapping directory="$PROJECT_DIR$/Lab6Spring2023-CodeProvided" vcs="hg4idea" />
+    <mapping directory="$PROJECT_DIR$/Lab6Spring2023-CodeProvided/4DGL-uLCD-SE" vcs="hg4idea" />
+    <mapping directory="$PROJECT_DIR$/Lab6Spring2023-CodeProvided/PinDetect" vcs="hg4idea" />
+    <mapping directory="$PROJECT_DIR$/PinDetect" vcs="hg4idea" />
+  </component>
+</project>

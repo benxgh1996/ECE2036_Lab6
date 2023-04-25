@@ -2,10 +2,14 @@
 #include "joystick.h"
 
 
-Nav_Switch::Nav_Switch (PinName up,PinName down,PinName left,PinName right,PinName fire):
+Nav_Switch::Nav_Switch (PinName up,PinName down,
+                        PinName left,PinName right,PinName fire):
     _pins(up, down, left, right, fire)
 {
-    _pins.mode(PullUp); //needed if pullups not on board or a bare nav switch is used - delete otherwise
+    _pins.mode(PullUp);
+    //needed if pullups not on board or a bare nav switch is used
+    // - delete otherwise
+
     wait(0.001); //delays just a bit for pullups to pull inputs high
 }
 

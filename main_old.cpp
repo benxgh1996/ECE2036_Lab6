@@ -53,7 +53,7 @@ Nav_Switch myNav(p16, p13, p14, p12, p15); //pin order on Sparkfun breakout
 
 int main() {
 
-    //Please have a startup and ending jingle. I provided
+    //Please have a startup and ending jingle.  I provided
     //a wimpy one note startup jingle
     GameJingle Jingle;
     AIBot buzz1;
@@ -109,32 +109,25 @@ int main() {
     uLCD.text_width(1); //You can change the size of your text if you want
     uLCD.text_height(1); //using these member functions for uLCD
     uLCD.locate(1,14); //units are not pixels but character sizes
-    uLCD.printf("%i",points);
-    //This will print out the points at bottom of screen
+    uLCD.printf("%i",points); //This will print out the points at bottom of screen
     
     bool GETOUT = false;
     int color = WHITE;
     
     while(!GETOUT) 
     {
-        //You can read about this in the lab.
-        // Allows quick printing of graphic sprites
-        uLCD.BLIT(buzz1.getXPos(), buzz1.getYPos(),
-                  SPRITE_WIDTH, SPRITE_HEIGHT, AIBot_sprite);
+        //You can read about this in the lab. Allows quick printing of graphic sprites
+        uLCD.BLIT(buzz1.getXPos(), buzz1.getYPos(), SPRITE_WIDTH, SPRITE_HEIGHT, AIBot_sprite);
         
-        //This is what the AI Bot 'captures'.
-        // This is so boring; you must spice up the game!
-        uLCD.filled_rectangle(randXPos, randYPos,
-                              randXPos+SPRITE_WIDTH,
-                              randYPos+SPRITE_HEIGHT,color);
+        //This is what the AI Bot 'captures'. This is so boring; you must spice up the game! 
+        uLCD.filled_rectangle(randXPos, randYPos,randXPos+SPRITE_WIDTH, randYPos+SPRITE_HEIGHT,color);
     
         //In order to make the sprite move I must keep track of the old
-        //position before it is changed by maneuvers on the joystick
+        //position before it is changed by maneveurs on the joystick
         buzz1.copyX();
         buzz1.copyY();
         
-        //Here is an example on how you can use the joystick
-        // using the joystick.h
+        //Here is an example on how you can use the joystick using the joystick.h
         //You might want to put in a move() function for the AIBot
         if (myNav.up()) buzz1.increaseY();
         if (myNav.down()) buzz1.decreaseY();
@@ -144,24 +137,21 @@ int main() {
         
         //You can change the color of your square with the push
         //buttons. Notice how they are used because they are in 
-        //a pull-up configuration
+        //a pull up configuration
         if (!pb1) {color = WHITE; }
         if (!pb2) {color = BLUE; }
         if (!pb3) {color = GREEN; }
                      
         //Here is an example of the AI Bot 'capturing' the square       
-        //IDEA: If the AI Bot sprite and the rectangle sprite intersect
-        //then delete the rectangular "target" and randomly draw in another
+        //IDEA: If the AI Bot sprite and the retangle sprite intersect
+        //then delete the rectanglar "target" and randomly draw in another 
         //location. 
-        if (buzz1.overlap(randXPos, randYPos,
-                          randXPos+SPRITE_WIDTH, randYPos+SPRITE_HEIGHT))
-        //then you need to delete rectangle and redraw in another place
+        if (buzz1.overlap(randXPos, randYPos, randXPos+SPRITE_WIDTH, randYPos+SPRITE_HEIGHT))
+        //then you need to delete retangle and redraw in another place
         {
-             //Note I had the target rectangle and the AI Bot sprite
-             // be the same size, but you do not have to do this.
-             uLCD.filled_rectangle(randXPos,
-                                   randYPos,randXPos+SPRITE_WIDTH,
-                                   randYPos+SPRITE_HEIGHT,BLACK);
+             //Note I had the target rectangle and the AI Bot sprite be the same
+             //size, but you do not have to do this.
+             uLCD.filled_rectangle(randXPos, randYPos,randXPos+SPRITE_WIDTH, randYPos+SPRITE_HEIGHT,BLACK);
              
              //See if you can make a better AI Bot capture sound than this!
              mySpeaker.PlayNote(450.0,0.1,0.2);
@@ -170,7 +160,7 @@ int main() {
              randXPos = (rand()%(118-SPRITE_WIDTH))+2;
              randYPos = (rand()%(108-SPRITE_HEIGHT))+2;
              
-             //now update the score.  Looks like a cut-and-paste job...
+             //now update the score.  Looks like a cut and paste job...
              //make make it a function!! 
              uLCD.locate(1,14);
              uLCD.text_width(1);
@@ -182,18 +172,15 @@ int main() {
         wait(0.1);    
         
         //If the AI Bot has been moved with the joystick then you need
-        //to delete its image at the old location.
-        //At the beginning of the loop
+        //to delete its image at the old location.  At the beginning of the loop
         //the AI Bot sprite will be redrawn again! 
-        if ((buzz1.getXPos() != buzz1.getOLDXPos())
-        || (buzz1.getYPos() != buzz1.getOLDYPos()))
+        if (( buzz1.getXPos() != buzz1.getOLDXPos()) || (buzz1.getYPos() != buzz1.getOLDYPos()))       
             uLCD.filled_rectangle(buzz1.getOLDXPos(), buzz1.getOLDYPos(), 
-            buzz1.getOLDXPos()+SPRITE_WIDTH,
-            buzz1.getOLDYPos()+ SPRITE_HEIGHT, BLACK);
+            buzz1.getOLDXPos()+SPRITE_WIDTH, buzz1.getOLDYPos()+ SPRITE_HEIGHT, BLACK);
+          
         }
     
-        //Print a final farewell to indicate win or loss.
-        //Also have a nice closing jingle for
+        //Print a final farewell to indicate win or loss. Also have a nice closing jingle for
         //your game! 
         uLCD.cls();
         uLCD.printf("\n\n\n\n\n       Happy \n   Summer \n      Break!!");

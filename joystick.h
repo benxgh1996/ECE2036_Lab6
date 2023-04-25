@@ -24,6 +24,4 @@ private:
     BusIn _pins;
 };
 
-
-
 #endif
