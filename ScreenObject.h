@@ -39,7 +39,7 @@ public:
     virtual const int* getSprite() = 0;
 
     virtual int getPoints() {return 0;}
-    virtual ~ScreenObject() = default;
+    virtual ~ScreenObject() {};
 
 private:
     int xPos;

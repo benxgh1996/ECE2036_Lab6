@@ -20,11 +20,11 @@ public:
     AIBot(): ScreenObject(100, 100) {}
     AIBot(int x, int y): ScreenObject(x, y) {}
 
-    void draw() override;
-    void move() override;
-    void erase() override;
+    virtual void draw();
+    virtual void move();
+    virtual void erase();
 
-    const int* getSprite() override {return AIBot_sprite;}
+    virtual const int* getSprite() {return AIBot_sprite;}
 };
 
 #endif

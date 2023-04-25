@@ -24,12 +24,12 @@ public:
     BatteryChargers(): ScreenObject() {}
     BatteryChargers(int x, int y): ScreenObject(x, y) {}
 
-    void draw() override;
-    void move() override;
-    void erase() override;
+    virtual void draw();
+    virtual void move();
+    virtual void erase();
 
-    const int* getSprite() override {return BatteryChargers_sprite;}
-    int getPoints() override {return 1;}
+    virtual const int* getSprite() {return BatteryChargers_sprite;}
+    virtual int getPoints() {return 1;}
 };
 
 
