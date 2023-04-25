@@ -106,6 +106,12 @@ build CMakeFiles/lab6.dir/HappyInductors.cpp.o: CXX_COMPILER__lab6_Debug /Users/
   OBJECT_DIR = CMakeFiles/lab6.dir
   OBJECT_FILE_DIR = CMakeFiles/lab6.dir
 
+build CMakeFiles/lab6.dir/gameJingle.cpp.o: CXX_COMPILER__lab6_Debug /Users/gonghan/Desktop/lab6/gameJingle.cpp || cmake_object_order_depends_target_lab6
+  DEP_FILE = CMakeFiles/lab6.dir/gameJingle.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -fcolor-diagnostics -std=gnu++11
+  OBJECT_DIR = CMakeFiles/lab6.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab6.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab6
@@ -114,7 +120,7 @@ build CMakeFiles/lab6.dir/HappyInductors.cpp.o: CXX_COMPILER__lab6_Debug /Users/
 #############################################
 # Link the executable lab6
 
-build lab6: CXX_EXECUTABLE_LINKER__lab6_Debug CMakeFiles/lab6.dir/main.cpp.o CMakeFiles/lab6.dir/AIBot.cpp.o CMakeFiles/lab6.dir/joystick.cpp.o CMakeFiles/lab6.dir/ScreenObject.cpp.o CMakeFiles/lab6.dir/BatteryChargers.cpp.o CMakeFiles/lab6.dir/ServerFarmers.cpp.o CMakeFiles/lab6.dir/CaringCapacitors.cpp.o CMakeFiles/lab6.dir/RebelResistors.cpp.o CMakeFiles/lab6.dir/AIPoisonPill.cpp.o CMakeFiles/lab6.dir/HappyInductors.cpp.o
+build lab6: CXX_EXECUTABLE_LINKER__lab6_Debug CMakeFiles/lab6.dir/main.cpp.o CMakeFiles/lab6.dir/AIBot.cpp.o CMakeFiles/lab6.dir/joystick.cpp.o CMakeFiles/lab6.dir/ScreenObject.cpp.o CMakeFiles/lab6.dir/BatteryChargers.cpp.o CMakeFiles/lab6.dir/ServerFarmers.cpp.o CMakeFiles/lab6.dir/CaringCapacitors.cpp.o CMakeFiles/lab6.dir/RebelResistors.cpp.o CMakeFiles/lab6.dir/AIPoisonPill.cpp.o CMakeFiles/lab6.dir/HappyInductors.cpp.o CMakeFiles/lab6.dir/gameJingle.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   OBJECT_DIR = CMakeFiles/lab6.dir
   POST_BUILD = :

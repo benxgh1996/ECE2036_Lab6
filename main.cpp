@@ -8,6 +8,7 @@
 #include "CaringCapacitors.h"
 #include "RebelResistors.h"
 #include "AIPoisonPill.h"
+#include "HappyInductors.h"
 
 #include "mbed.h"
 #include "TMP36.h"
@@ -114,6 +115,7 @@ int main() {
     screenObjectPtrs.push_back(new CaringCapacitors());
     screenObjectPtrs.push_back(new RebelResistors());
     screenObjectPtrs.push_back(new AIPoisonPill());
+    screenObjectPtrs.push_back(new HappyInductors());
 
 
     int points = 0;
@@ -127,7 +129,14 @@ int main() {
     //This will print out the points at bottom of screen
 
     screenObjectPtrs[0]->draw();
+    bool gameover = false;
     while(!GETOUT) {
+        if (!pb1) {
+            while (!pb2) {
+                wait(0.1);
+            }
+        }
+
         // Move screen objects.
         for (int i = 0; i < screenObjectPtrs.size(); i++) {
             if (i == 0) {
@@ -159,8 +168,27 @@ int main() {
                 uLCD.text_width(1);
                 uLCD.text_height(1);
                 uLCD.printf("%i", points);
+
+                if (points >= 50) {
+                    uLCD.cls();
+                    uLCD.printf("\n\n\n\n\n        You Won!\n   "
+                                "                AI Robot\n"
+                                "        FULLY CHARGED!!");
+                    wait(3);
+                    gameover = true;
+                    break;
+                } else if (points < 0) {
+                    uLCD.cls();
+                    uLCD.printf("\n\n\n\n\n        You Lost!\n   "
+                                "                AI Robot\n"
+                                "        OUT OF POWER!!");
+                    wait(3);
+                    gameover = true;
+                    break;
+                }
             }
         }
+        if (gameover) break;
 //        wait(0.1);
     }
 
@@ -172,5 +200,8 @@ int main() {
     // Also have a nice closing jingle for
     // your game!
     uLCD.cls();
-    uLCD.printf("\n\n\n\n\nHappy\nSummer\nBreak!!");
+    uLCD.printf("\n\n\n\n\n        AI Robot\n"
+                "            Will\n"
+                "        Come back!!");
+    Jingle.playExit();
 }
