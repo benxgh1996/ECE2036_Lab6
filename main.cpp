@@ -4,6 +4,7 @@
 #include "ScreenObject.h"
 #include "AIBot.h"
 #include "BatteryChargers.h"
+#include "ServerFarmers.h"
 // #include "helper.h"
 
 #include "mbed.h"
@@ -107,6 +108,7 @@ int main() {
     vector<ScreenObject *> screenObjectPtrs;
     screenObjectPtrs.push_back(new AIBot());
     screenObjectPtrs.push_back(new BatteryChargers());
+    screenObjectPtrs.push_back(new ServerFarmers());
 
     int points = 0;
 

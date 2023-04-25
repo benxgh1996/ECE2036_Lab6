@@ -42,7 +42,7 @@ public:
     virtual ~ScreenObject() {};
 
     virtual int getDeltaX() {return DELTA_X;}
-    virtual int getDeltaY() {return DELTA_Y;
+    virtual int getDeltaY() {return DELTA_Y;}
 
 private:
     int xPos;

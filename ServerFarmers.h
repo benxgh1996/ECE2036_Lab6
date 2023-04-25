@@ -8,6 +8,7 @@
 #include "ScreenObject.h"
 
 class ServerFarmers: public ScreenObject {
+public:
     ServerFarmers(): ScreenObject() {}
     ServerFarmers(int x, int y): ScreenObject(x, y) {}
 
