@@ -1,5 +1,5 @@
 //
-// Created by Gonghan Xu on 4/24/23.
+// Created by Gonghan Xu
 //
 
 #include "ScreenObject.h"
@@ -50,18 +50,18 @@ void ScreenObject::decreaseY(int delta) {
 void ScreenObject::randMoveX() {
     int randNum = rand() % 2;
     if (randNum == 0) {
-        increaseX(DELTA_X);
+        increaseX(getDeltaX());
     } else {
-        increaseX(-DELTA_X);
+        increaseX(-getDeltaX());
     }
 }
 
 void ScreenObject::randMoveY() {
     int randNum = rand() % 2;
     if (randNum == 0) {
-        increaseY(DELTA_Y);
+        increaseY(getDeltaY());
     } else {
-        increaseY(-DELTA_Y);
+        increaseY(-getDeltaY());
     }
 }
 

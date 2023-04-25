@@ -1,5 +1,5 @@
 //
-// Created by Gonghan Xu on 4/24/23.
+// Created by Gonghan Xu
 //
 
 #include "BatteryChargers.h"

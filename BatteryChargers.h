@@ -1,5 +1,5 @@
 //
-// Created by Gonghan Xu on 4/24/23.
+// Created by Gonghan Xu
 //
 
 #ifndef BATTERYCHARGERS_H
@@ -17,7 +17,7 @@ public:
     virtual void erase();
 
     virtual int* getSprite();
-    virtual int getPoints() {return 1;}
+    virtual int getPoints() {return 5;}
 };
 
 

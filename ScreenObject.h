@@ -1,5 +1,5 @@
 //
-// Created by Gonghan Xu on 4/24/23.
+// Created by Gonghan Xu
 //
 
 #ifndef SCREENOBJECT_H
@@ -22,9 +22,6 @@ public:
     void decreaseX(int delta=DELTA_X);
     void decreaseY(int delta=DELTA_Y);
 
-    void randMoveX();
-    void randMoveY();
-
     int getXPos() const {return xPos;}
     int getYPos() const {return yPos;}
 
@@ -33,6 +30,9 @@ public:
 
     bool overlap(ScreenObject* other);
 
+    void randMoveX();
+    void randMoveY();
+
     virtual void draw() = 0;
     virtual void move() = 0;
     virtual void erase() = 0;
@@ -40,6 +40,9 @@ public:
 
     virtual int getPoints() {return 0;}
     virtual ~ScreenObject() {};
+
+    virtual int getDeltaX() {return DELTA_X;}
+    virtual int getDeltaY() {return DELTA_Y;
 
 private:
     int xPos;
