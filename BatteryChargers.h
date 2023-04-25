@@ -17,7 +17,7 @@ public:
     virtual void erase();
 
     virtual int* getSprite();
-    virtual int getPoints() {return 5;}
+    virtual int getPoints() {return 2;}
 };
 
 

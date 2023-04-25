@@ -5,6 +5,7 @@
 #ifndef CARINGCAPACITORS_H
 #define CARINGCAPACITORS_H
 
+#include "ScreenObject.h"
 
 class CaringCapacitors: public ScreenObject {
 public:
@@ -16,7 +17,7 @@ public:
     virtual void erase();
 
     virtual int* getSprite();
-    virtual int getPoints() {return 2;}
+    virtual int getPoints() {return 1;}
 
     virtual int getDeltaX() {return 2;}
     virtual int getDeltaY() {return 2;}

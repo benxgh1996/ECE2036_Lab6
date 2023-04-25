@@ -17,8 +17,8 @@ public:
     ScreenObject(): xPos(30), yPos(30) {}
     ScreenObject(int x, int y): xPos(x), yPos(y) {}
 
-    void increaseX(int delta=DELTA_X);
-    void increaseY(int delta=DELTA_Y);
+    void virtual increaseX(int delta=DELTA_X);
+    void virtual increaseY(int delta=DELTA_Y);
     void decreaseX(int delta=DELTA_X);
     void decreaseY(int delta=DELTA_Y);
 

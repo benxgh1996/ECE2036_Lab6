@@ -7,7 +7,7 @@
 #include "ServerFarmers.h"
 #include "CaringCapacitors.h"
 #include "RebelResistors.h"
-// #include "helper.h"
+#include "AIPoisonPill.h"
 
 #include "mbed.h"
 #include "TMP36.h"
@@ -113,6 +113,7 @@ int main() {
     screenObjectPtrs.push_back(new ServerFarmers());
     screenObjectPtrs.push_back(new CaringCapacitors());
     screenObjectPtrs.push_back(new RebelResistors());
+    screenObjectPtrs.push_back(new AIPoisonPill());
 
 
     int points = 0;
@@ -124,13 +125,6 @@ int main() {
     uLCD.locate(1,14); //units are not pixels but character sizes
     uLCD.printf("%i",points);
     //This will print out the points at bottom of screen
-
-    // for (int i = 0; i < screenObjectPtrs.size(); i++) {
-    //         // screenObjectPtrs[i]->erase();
-    //         // screenObjectPtrs[i]->move();
-    //         // wait(0.1);
-    //         screenObjectPtrs[i]->draw();
-    // }
 
     screenObjectPtrs[0]->draw();
     while(!GETOUT) {
@@ -167,7 +161,7 @@ int main() {
                 uLCD.printf("%i", points);
             }
         }
-        wait(0.1);
+//        wait(0.1);
     }
 
     for (int i = 0; i < screenObjectPtrs.size(); i++) {
