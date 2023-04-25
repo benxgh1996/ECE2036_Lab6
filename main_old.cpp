@@ -178,10 +178,10 @@ int main() {
             uLCD.filled_rectangle(buzz1.getOLDXPos(), buzz1.getOLDYPos(), 
             buzz1.getOLDXPos()+SPRITE_WIDTH, buzz1.getOLDYPos()+ SPRITE_HEIGHT, BLACK);
           
-        }
+    }
     
-        //Print a final farewell to indicate win or loss. Also have a nice closing jingle for
-        //your game! 
-        uLCD.cls();
-        uLCD.printf("\n\n\n\n\n       Happy \n   Summer \n      Break!!");
+    //Print a final farewell to indicate win or loss. Also have a nice closing jingle for
+    //your game!
+    uLCD.cls();
+    uLCD.printf("\n\n\n\n\n       Happy \n   Summer \n      Break!!");
 }

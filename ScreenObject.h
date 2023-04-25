@@ -7,39 +7,43 @@
 
 class ScreenObject {
 public:
-    static const int X_DELTA
-    static const int Y_DELTA
+    static const int DELTA_X;
+    static const int DELTA_Y;
 
-    ScreenObject(): xpos(50), ypos(50) {copyX(); copyY();}
-    inline void copyX(){ xOLDpos = xpos;}
-    inline void copyY() {yOLDpos = ypos;}
+    static int randXPos();
+    static int randYPos();
 
-    inline void increaseX() {xPos += X_DELTA;}
-    inline void increaseY() {yPos += Y_DELTA;}
-    inline void decreaseX() {xPos -= X_DELTA;}
-    inline void decreaseY() {yPos -= Y_DELTA;}
+    // Constructors
+    ScreenObject(): xPos(30), yPos(30) {}
+    ScreenObject(int x, int y): xPos(x), yPos(y) {}
+
+    inline void increaseX(int delta=DELTA_X);
+    inline void increaseY(int delta=DELTA_Y);
+    inline void decreaseX(int delta=DELTA_X);
+    inline void decreaseY(int delta=DELTA_Y);
+
+    void randMoveX();
+    void randMoveY();
 
     int getXPos() const {return xPos;}
     int getYPos() const {return yPos;}
-    int getXOldPos() const {return xOldPos;}
-    int getYOldPos() const {return yOldPos;}
 
     void setXPos(int x) {xPos = x;}
     void setYPos(int y) {yPos = y;}
-    void setXOldPos(int x) {xOldPos = x;}
-    void setYOldPos(int y) {yOldPos = y;}
 
-    // Checking if the object is overlapping with the given coordinate.
-    virtual bool overlap(int x, int y) = 0;
-    virtual void draw(int x, int y) = 0;
+    bool overlap(ScreenObject* other);
+
+    virtual void draw() = 0;
     virtual void move() = 0;
     virtual void erase() = 0;
+    virtual const int* getSprite() = 0;
+
+    virtual int getPoints() {return 0;}
+    virtual ~ScreenObject() = default;
 
 private:
     int xPos;
     int yPos;
-    int xOldPos;
-    int yOldPos;
 };
 
 
