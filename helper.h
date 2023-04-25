@@ -2,8 +2,8 @@
 // Created by Gonghan Xu on 4/24/23.
 //
 
-#ifndef LAB6_HELPER_H
-#define LAB6_HELPER_H
+#ifndef HELPER_H
+#define HELPER_H
 
 //I am okay with keeping these
 //as define statements for the colors
@@ -32,15 +32,4 @@
 #define WALL_BRX 120
 #define WALL_BRY 110
 
-int blank_sprite[SPRITE_HEIGHT * SPRITE_WIDTH] = {
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_,
-        _,_,_,_,_,_,_,_,_,_,_
-};
-
-#endif //LAB6_HELPER_H
+#endif //HELPER_H

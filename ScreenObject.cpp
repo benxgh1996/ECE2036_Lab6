@@ -6,6 +6,8 @@
 #include "helper.h"
 #include <cstdlib>
 
+using namespace std;
+
 const int ScreenObject::DELTA_X = 5;
 const int ScreenObject::DELTA_Y = 5;
 
@@ -18,20 +20,20 @@ int ScreenObject::randYPos() {
 }
 
 void ScreenObject::increaseX(int delta) {
-    if (xPos + delta < WALL_TLX) {
-        xPos = WALL_TLX;
-    } else if (xPos + delta + SPRITE_WIDTH - 1 > WALL_BRX) {
-        xPos = WALL_BRX - (SPRITE_WIDTH - 1);
+    if (xPos + delta <= WALL_TLX) {
+        xPos = WALL_TLX + 1;
+    } else if (xPos + delta + SPRITE_WIDTH - 1 >= WALL_BRX) {
+        xPos = WALL_BRX - (SPRITE_WIDTH - 1) - 1;
     } else {
         xPos += delta;
     }
 }
 
 void ScreenObject::increaseY(int delta) {
-    if (yPos + delta < WALL_TLY) {
-        yPos = WALL_TLY;
-    } else if (yPos + delta + SPRITE_HEIGHT - 1 > WALL_BRY) {
-        yPos = WALL_BRY - (SPRITE_HEIGHT - 1);
+    if (yPos + delta <= WALL_TLY) {
+        yPos = WALL_TLY + 1;
+    } else if (yPos + delta + SPRITE_HEIGHT - 1 >= WALL_BRY) {
+        yPos = WALL_BRY - (SPRITE_HEIGHT - 1) - 1;
     } else {
         yPos += delta;
     }
@@ -67,13 +69,13 @@ bool ScreenObject::overlap(ScreenObject* other) {
     for (int i = 0; i < SPRITE_HEIGHT; i++) {
         for (int j = 0; j < SPRITE_WIDTH; j++) {
             if (getSprite()[i * SPRITE_WIDTH + j] != _
-            && (i - other->getYPos() + getYPos()) >= 0
-            && (i - other->getYPos() + getYPos()) < SPRITE_HEIGHT
-            && (j - other->getXPos() + getXPos()) >= 0
-            && (j - other->getXPos() + getXPos()) < SPRITE_WIDTH
-            && other->getSprite()
-                [(i - other->getYPos() + getYPos()) * SPRITE_WIDTH
-                + (j - other->getXPos() + getXPos())] != _) {
+                && (i - other->getYPos() + getYPos()) >= 0
+                && (i - other->getYPos() + getYPos()) < SPRITE_HEIGHT
+                && (j - other->getXPos() + getXPos()) >= 0
+                && (j - other->getXPos() + getXPos()) < SPRITE_WIDTH
+                && other->getSprite()
+                   [(i - other->getYPos() + getYPos()) * SPRITE_WIDTH
+                    + (j - other->getXPos() + getXPos())] != _) {
 
                 return true;
             }
@@ -81,4 +83,3 @@ bool ScreenObject::overlap(ScreenObject* other) {
     }
     return false;
 }
-

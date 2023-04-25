@@ -2,8 +2,8 @@
 // Created by Gonghan Xu on 4/24/23.
 //
 
-#ifndef LAB6_SCREENOBJECT_H
-#define LAB6_SCREENOBJECT_H
+#ifndef SCREENOBJECT_H
+#define SCREENOBJECT_H
 
 class ScreenObject {
 public:
@@ -17,10 +17,10 @@ public:
     ScreenObject(): xPos(30), yPos(30) {}
     ScreenObject(int x, int y): xPos(x), yPos(y) {}
 
-    inline void increaseX(int delta=DELTA_X);
-    inline void increaseY(int delta=DELTA_Y);
-    inline void decreaseX(int delta=DELTA_X);
-    inline void decreaseY(int delta=DELTA_Y);
+    void increaseX(int delta=DELTA_X);
+    void increaseY(int delta=DELTA_Y);
+    void decreaseX(int delta=DELTA_X);
+    void decreaseY(int delta=DELTA_Y);
 
     void randMoveX();
     void randMoveY();
@@ -36,7 +36,7 @@ public:
     virtual void draw() = 0;
     virtual void move() = 0;
     virtual void erase() = 0;
-    virtual const int* getSprite() = 0;
+    virtual int* getSprite() = 0;
 
     virtual int getPoints() {return 0;}
     virtual ~ScreenObject() {};
@@ -47,4 +47,4 @@ private:
 };
 
 
-#endif //LAB6_SCREENOBJECT_H
+#endif //SCREENOBJECT_H
