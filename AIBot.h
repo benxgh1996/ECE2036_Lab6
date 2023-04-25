@@ -24,7 +24,7 @@ public:
     void move() override;
     void erase() override;
 
-    const int* getSprite() {return AIBot_sprite;}
+    const int* getSprite() override {return AIBot_sprite;}
 };
 
 #endif

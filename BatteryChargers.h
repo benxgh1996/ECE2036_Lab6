@@ -28,8 +28,8 @@ public:
     void move() override;
     void erase() override;
 
-    const int* getSprite() {return BatteryChargers_sprite;}
-    int getPoints() {return 1;}
+    const int* getSprite() override {return BatteryChargers_sprite;}
+    int getPoints() override {return 1;}
 };
 
 
