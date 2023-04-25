@@ -5,6 +5,8 @@
 #include "AIBot.h"
 #include "BatteryChargers.h"
 #include "ServerFarmers.h"
+#include "CaringCapacitors.h"
+#include "RebelResistors.h"
 // #include "helper.h"
 
 #include "mbed.h"
@@ -109,6 +111,9 @@ int main() {
     screenObjectPtrs.push_back(new AIBot());
     screenObjectPtrs.push_back(new BatteryChargers());
     screenObjectPtrs.push_back(new ServerFarmers());
+    screenObjectPtrs.push_back(new CaringCapacitors());
+    screenObjectPtrs.push_back(new RebelResistors());
+
 
     int points = 0;
 

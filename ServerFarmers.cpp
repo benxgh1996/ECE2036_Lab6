@@ -10,14 +10,14 @@ extern uLCD_4DGL uLCD;
 extern int blank_sprite[];
 
 int ServerFarmers_sprite[SPRITE_HEIGHT * SPRITE_WIDTH] = {
-        _,_,_,_,X,X,X,_,_,_,_,
-        _,_,X,X,X,X,X,X,X,_,_,
-        _,_,_,X,Y,X,Y,X,_,_,_,
-        _,_,_,X,X,Y,X,X,_,_,_,
-        _,X,X,X,X,X,X,X,X,X,_,
-        _,_,_,X,X,X,X,X,_,_,_,
-        _,_,_,X,X,_,X,X,_,_,_,
-        _,_,X,X,_,_,_,X,X,_,_
+        _,_,_,_,R,R,R,_,_,_,_,
+        _,_,R,R,R,R,R,R,R,_,_,
+        _,_,_,R,Y,R,Y,R,_,_,_,
+        _,_,_,R,R,R,R,R,_,_,_,
+        _,R,R,R,R,R,R,R,R,R,_,
+        _,_,_,R,R,R,R,R,_,_,_,
+        _,_,_,R,R,_,R,R,_,_,_,
+        _,_,R,R,_,_,_,R,R,_,_
 };
 
 void ServerFarmers::erase() {
