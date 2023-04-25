@@ -19,8 +19,8 @@ public:
     virtual int* getSprite();
     virtual int getPoints() {return -10;}
 
-    virtual int getDeltaX() {return 10;}
-    virtual int getDeltaY() {return 10;}
+    virtual int getDeltaX() {return 5;}
+    virtual int getDeltaY() {return 5;}
 
     virtual void increaseX(int delta = DELTA_X);
     virtual void increaseY(int delta = DELTA_Y);
